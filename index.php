@@ -19,12 +19,12 @@ $context = stream_context_create($opts);
 $test = file_get_contents("https://api.royaleapi.com/clan/8QLPRUPQ/warlog",true, $context);
 $data = json_decode($test);
 $i = 0;
-$id = $data[1]->createdDate;
-var_dump($data[1]);
+$id = $data[0]->createdDate;
+var_dump($data[0]);
 echo "ID: " . $id . "<br>";
-$members = $data[1]->participants;
+$members = $data[0]->participants;
 foreach ($members as $member) {
-    echo $data[1]->participants[$i]->name . "->" . $data[1]->participants[$i]->cardsEarned . " Win: " . $data[1]->participants[$i]->wins . "<br>";
+    echo $data[0]->participants[$i]->name . "->" . $data[0]->participants[$i]->cardsEarned . " Win: " . $data[0]->participants[$i]->wins . "<br>";
     $i=$i +1;
 }
 echo "<pre>";
