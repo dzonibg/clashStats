@@ -4,7 +4,6 @@
  * User: Nikola
  * Date: 6/19/2018
  * Time: 11:08 AM
- * edited 12/21/2018
  */
 echo "clashStats v0.1". "<br>";
 
