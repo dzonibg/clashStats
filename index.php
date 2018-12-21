@@ -4,6 +4,7 @@
  * User: Nikola
  * Date: 6/19/2018
  * Time: 11:08 AM
+ * Hope this one does better.
  */
 echo "clashStats v0.1". "<br>";
 
