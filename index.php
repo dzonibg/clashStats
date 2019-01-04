@@ -21,12 +21,16 @@ $test = file_get_contents("https://api.royaleapi.com/clan/8QLPRUPQ/warlog",true,
 $data = json_decode($test);
 $i = 0;
 $id = $data[0]->createdDate;
-var_dump($data[0]);
-echo "ID: " . $id . "<br>";
+echo $id . "<br>";
+//var_dump($data[0]);
+echo "WAR ID: " . $id . "<br>";
 $members = $data[0]->participants;
 foreach ($members as $member) {
-    echo $data[0]->participants[$i]->name . "->" . $data[0]->participants[$i]->cardsEarned . " Win: " . $data[0]->participants[$i]->wins . "<br>";
+    echo  $data[0]->participants[$i]->name . " -> Wins: " . $data[0]->participants[$i]->wins . "   Collection day:" . $data[0]->participants[$i]->collectionDayBattlesPlayed . "/3" . "Collected:" . $data[0]->participants[$i]->cardsEarned;
+        if ($data[0]->participants[$i]->collectionDayBattlesPlayed != "3/3") { echo "<font color = red> Missed collection!</font>"; }
+        if ($data[0]->participants[$i]->battlesPlayed != (1 or 2)) { echo "<b><font color = red> Missed battle!</font></b>"; }
     $i=$i +1;
+        echo "<br>";
 }
 echo "<pre>";
 echo "</pre>";
